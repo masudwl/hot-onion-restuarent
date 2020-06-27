@@ -3,6 +3,7 @@ import './Style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../logo2.png'; 
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -20,10 +21,10 @@ const Header = () => {
                             <a className="nav-link" href="/cart"><FontAwesomeIcon icon={faShoppingCart} /></a>
                         </li>
                         <li className="nav-item ml-4">
-                            <a className="nav-link" href="/">Login</a>
+                            <a className="nav-link" href="login">Login</a>
                         </li>
                         <li className="nav-item ml-4">
-                            <button className="btn">Sign Up</button>
+                            <Link to="/signup"><button className="btn">Sign Up</button></Link>
                         </li>
                     </ul>
                 </div>

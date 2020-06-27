@@ -280,3 +280,7 @@ hr{
     font-weight: 500;
     color: #504d4d;
 }
+/* Login Area  */
+.login-area img{
+    width: 200px;
+}

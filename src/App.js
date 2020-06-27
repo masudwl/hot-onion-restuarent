@@ -17,6 +17,8 @@ import Footer from './Component/Footer';
 import Copyright from './Component/Copyright';
 import CartItem from './Component/CartItem';
 import Cart from './Component/Cart';
+import Login from './Component/Login';
+import SignUp from './Component/SignUp';
 import CartContextProvider from './Component/CartContext';
 function App() {
   
@@ -46,6 +48,12 @@ function App() {
           </Route>
           <Route path="/cart">
             <Cart></Cart>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/signup">
+            <SignUp></SignUp>
           </Route>
           </CartContextProvider>
         </Switch>

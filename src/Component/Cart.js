@@ -3,9 +3,9 @@ import { useForm} from "react-hook-form";
 import './Style.css';
 import {CartContext} from './CartContext'; 
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
-
 
 
 const data = useContext (CartContext); 
@@ -71,7 +71,7 @@ console.log(data);
                             </div>
                             
                         </div>
-                        <button>Place Order</button>
+                        <Link to="/signup"><button>Place Order</button></Link>
                     </div>
                 </div>
             </div>
