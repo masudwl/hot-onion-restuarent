@@ -24,6 +24,7 @@ function App() {
   
 
   return (
+    <CartContextProvider>
     <Router>
       <Header></Header>
       <Banner></Banner>
@@ -42,7 +43,7 @@ function App() {
           <Route path="/dinner">
             <Dinner></Dinner>
           </Route>
-          <CartContextProvider>
+          
           <Route path="/cartItem/:id">
             <CartItem></CartItem>
           </Route>
@@ -55,12 +56,13 @@ function App() {
           <Route path="/signup">
             <SignUp></SignUp>
           </Route>
-          </CartContextProvider>
+          
         </Switch>
         <Blog></Blog>
         <Footer></Footer>
         <Copyright></Copyright>
     </Router>
+    </CartContextProvider>
   );
 }
 

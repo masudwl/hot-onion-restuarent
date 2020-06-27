@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'npm',
+1 verbose cli   '@',
+1 verbose cli   'latest',
+1 verbose cli   '-g'
+1 verbose cli ]
+2 info using npm@6.14.4
+3 info using node@v12.17.0
+4 verbose npm-session 3b9acf77c0bb20bf
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 http fetch GET 200 https://registry.npmjs.org/latest 1765ms
+8 http fetch GET 200 https://registry.npmjs.org/latest/-/latest-0.2.0.tgz 199ms
+9 silly pacote tag manifest for latest@latest fetched in 1986ms
+10 silly fetchPackageMetaData error for npm@latest Response timeout while trying to fetch https://registry.npmjs.org/npm (over 6000ms)
+11 timing stage:rollbackFailedOptional Completed in 0ms
+12 timing stage:runTopLevelLifecycles Completed in 7030ms
+13 verbose stack Error: Invalid tag name "@": Tags may not have any characters that encodeURIComponent encodes.
+13 verbose stack     at invalidTagName (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:91:15)
+13 verbose stack     at fromRegistry (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:296:13)
+13 verbose stack     at resolve (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:81:12)
+13 verbose stack     at npa (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-package-arg\npa.js:52:10)
+13 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install\deps.js:227:14
+13 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:35
+13 verbose stack     at Array.forEach (<anonymous>)
+13 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:52:11
+13 verbose stack     at Array.forEach (<anonymous>)
+13 verbose stack     at asyncMap (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:51:8)
+13 verbose stack     at exports.getAllMetadata (C:\Program Files\nodejs\node_modules\npm\lib\install\deps.js:224:3)
+13 verbose stack     at Installer.loadArgMetadata (C:\Program Files\nodejs\node_modules\npm\lib\install.js:366:3)
+13 verbose stack     at Installer.readGlobalPackageData (C:\Program Files\nodejs\node_modules\npm\lib\install.js:664:8)
+13 verbose stack     at Array.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\bind-actor.js:15:8)
+13 verbose stack     at LOOP (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:15:14)
+13 verbose stack     at chain (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\chain.js:20:5)
+14 verbose cwd G:\p.hero\projects\hot-onion-restuarent
+15 verbose Windows_NT 6.1.7601
+16 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "npm" "@" "latest" "-g"
+17 verbose node v12.17.0
+18 verbose npm  v6.14.4
+19 error code EINVALIDTAGNAME
+20 error Invalid tag name "@": Tags may not have any characters that encodeURIComponent encodes.
+21 verbose exit [ 1, true ]

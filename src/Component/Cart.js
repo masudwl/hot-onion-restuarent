@@ -1,39 +1,31 @@
 import React from 'react';
-import { useForm} from "react-hook-form";
 import './Style.css';
 import {CartContext} from './CartContext'; 
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import CartForm from './CartForm';
 
-const Cart = (props) => {
-
-
+const Cart = () => {
 const data = useContext (CartContext); 
-console.log(data); 
+if(data.cart.shoppingCart[0]){
+const {name, price, img} = data.cart.shoppingCart[0]; 
 
-    const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
+const subTotal = (price * data.cart.qty).toFixed(2); 
+const tax = (subTotal * 5 /100).toFixed(2); 
+
+let shipping = 0;
+if (subTotal < 50){
+    shipping = 20; 
+}else if (subTotal > 50){
+    shipping = 30; 
+}
+
+const totalPrice = subTotal + tax + shipping; 
     return (
         <div className="container">
             <div className="row">
-                <div className="col-md-7">
-                    <h4 className="display-6">Edit Delivery Details</h4>
-                    <hr></hr>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input className="form-control" name="name"  placeholder="deliver to door" ref={register({ required: true })} />
-                    {errors.name && <span>This field is required</span>}
-                    <input className="form-control" name="address"  placeholder="address" ref={register({ required: true })} />
-                    {errors.address && <span>This field is required</span>}
-                    <input className="form-control" name="address-one"  placeholder="address 2" />
-                    {errors.name && <span>This field is required</span>}
-                    <input className="form-control" name="business"  placeholder="Business Name" ref={register({ required: true })} />
-                    {errors.business && <span>This field is required</span>}
-                    <input className="form-control" name="delivery"  placeholder="Add Delivery Instruction" ref={register({ required: true })} />
-                    {errors.delivery && <span>This field is required</span>}
-                    
-                    <input type="submit" className="form-control submit" value="Save and Continue" />
-                </form>
-                </div>
+                <CartForm></CartForm>
+
                 <div className="col-md-5">
                     <div className="addText">
                         <p>From <strong>Gulshan Plaza Restora</strong></p>
@@ -43,16 +35,16 @@ console.log(data);
                     <div className="cart-main">
                         <div className="cart-item">
                             <div>
-                                <img src="" alt="cart image"/>
+                                <img src={img} alt="cart image"/>
                             </div>
                             <div className="cart-text">
-                                <h6>Butter Nan</h6>
-                                <h5>$40.00</h5>
-                                <p>Delivery Free</p>
+                            <h6>{name}</h6>
+                            <h5>$ {price}</h5>
+                            <p>Delivery Free</p>
                             </div>
                             <div className="cart-qty">
                                 <span></span>
-                                <input type="text" value="02"/>
+                                <input type="text" value={data.cart.qty}/>
                                 <span></span>
                             </div>
                         </div>
@@ -64,10 +56,10 @@ console.log(data);
                                 <h4>Total</h4>
                             </div>
                             <div className="figure">
-                                <h5>500.00</h5>
-                                <h5>00.00</h5>
-                                <h5>00.00</h5>
-                                <h4>00.00</h4>
+                            <h5>{subTotal}</h5>
+                            <h5>{tax}</h5>
+                            <h5>{shipping}</h5>
+                            <h4>{totalPrice}</h4>
                             </div>
                             
                         </div>
@@ -77,6 +69,13 @@ console.log(data);
             </div>
         </div>
     );
-};
+} else{
+    return (
+        <div className="container">
+            <h1>Your cart is Empty Please Prodcut add your cart list here <a href="/">Add Products</a></h1>
+        </div>
+    )
+} 
+}
 
 export default Cart;

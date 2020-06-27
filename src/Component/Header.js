@@ -18,7 +18,8 @@ const Header = () => {
                 <div className="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="/cart"><FontAwesomeIcon icon={faShoppingCart} /></a>
+                            
+                            <Link to={{pathname: '/cart'}} className="nav-link" > <FontAwesomeIcon icon={faShoppingCart} /></Link>
                         </li>
                         <li className="nav-item ml-4">
                             <a className="nav-link" href="login">Login</a>
